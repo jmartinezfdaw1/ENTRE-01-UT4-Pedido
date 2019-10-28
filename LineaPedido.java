@@ -14,15 +14,16 @@ public class LineaPedido
     /**
      * Constructor  
      */
-    public LineaPedido()    {
-         
+    public LineaPedido(Producto producto, int cantidad)    {
+         this.producto = producto;
+         this.cantidad = cantidad;
     }
 
      /**
      * accesor para el producto
      */
-    public     getProducto() {
-         
+    public Producto getProducto() {
+         return producto;
     }
 
     /**
@@ -43,6 +44,7 @@ public class LineaPedido
      * (ver enunciado)
      */
     public String toString() {
-        
+        String lineaLineaPedido = String.format("%4d", cantidad);
+        return producto.toString() + lineaLineaPedido;
     }
 }

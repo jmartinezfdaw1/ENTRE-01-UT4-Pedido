@@ -13,7 +13,7 @@ public class TestPedido
      */
     public TestPedido()    {
         // crear pedido1
-       
+       pedido1 = new Pedido
 	   
 	   
 	   

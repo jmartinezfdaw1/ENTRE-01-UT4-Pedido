@@ -32,8 +32,9 @@ public class Producto
     /**
      * obtiene un nuevo producto copia idéntica del actual
      */
-    public         obtenerCopia() {
-         
+    public Producto obtenerCopia() {
+         Producto producto = new Producto();
+         return producto;
     }
 
     /**
@@ -41,7 +42,8 @@ public class Producto
      * (ver enunciado)
      */
     public String toString() {
-        
+        String lineaProducto = String.format("%30s %8,2f",nombre, precio);
+        return lineaProducto;
     }
 
 }

@@ -52,8 +52,8 @@ public class Cliente
      * representación textual del cliente
      */
     public String toString() {
-         
-          
+         String lineaCliente = String.format("NOMBRE: %-10s \nDIRECCION: %-10s \nCIUDAD: %-10s \nPROVINCIA: %-10s",nombre, direccion, ciudad, provincia); 
+         return lineaCliente;
     }
     
     /**
