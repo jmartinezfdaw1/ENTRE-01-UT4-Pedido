@@ -36,8 +36,9 @@ public class LineaPedido
     /**
      * obtiene una nueva línea de pedido copia idéntica de la actual
      */
-    public    obtenerCopia() {
-         
+    public LineaPedido obtenerCopia() {
+         LineaPedido lineaPedido = new LineaPedido(this.producto, this.cantidad);
+         return lineaPedido;
     }
      /**
      * Representación textual de la línea de pedido

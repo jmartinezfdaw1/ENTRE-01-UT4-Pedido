@@ -13,13 +13,14 @@ public class TestPedido
      */
     public TestPedido()    {
         // crear pedido1
-       pedido1 = new Pedido
+       pedido1 = new Pedido(new Fecha(4, 9, 2019), new Cliente("Juan Soto", "Avda. Pio XII", "Pamplona", "Navarra"), new LineaPedido(new Producto("Rotulador fosforescente", 6.70), 20), new LineaPedido(new Producto("Memoria USB 64GB", 14.80), 10));
+       
 	   
 	   
 	   
 
         // crear pedido2
-         
+       pedido2 = new Pedido(new Fecha(8, 10, 2019), new Cliente("Elisa Nuin", "C/ Rio Alzania 7", "Pamplona", "Navarra"), new LineaPedido(new Producto("Sacapuntas manual", 16.64), 8), new LineaPedido(new Producto("Corrector tippex", 5.99), 20)); 
 
     }
 
@@ -27,7 +28,37 @@ public class TestPedido
      * Muestra la información de los dos pedidos (ver enunciado)
      */
     public void mostrarPedidos() {
-        
+        System.out.println("Pedido 1" +
+                           "\n----------------------------" +
+                           "\nFECHA PEDIDO: " + pedido1.getFecha() +
+                           "\nDATOS DEL CLIENTE" +
+                           "\n" + pedido1.getCliente() +
+                           "\n" +
+                           "\n**** Articulos en el pedido ****" +
+                           "\n" +
+                           "\n" + pedido1.toString() +
+                           "\n" +
+                           "\n**** A pagar ****" +
+                           "\n" +
+                           "\n" + pedido1.toString() +
+                           "\n" +
+                           "\n" +
+                           "\n" +
+                           "Pedido 2" +
+                           "\n----------------------------" +
+                           "\nFECHA PEDIDO: " + pedido2.getFecha() +
+                           "\nDATOS DEL CLIENTE" +
+                           "\n" + pedido2.getCliente() +
+                           "\n" +
+                           "\n**** Articulos en el pedido ****" +
+                           "\n" +
+                           "\n" + pedido2.toString() +
+                           "\n" +
+                           "\n**** A pagar ****" +
+                           "\n" +
+                           "\n" + pedido2.toString() +
+                           "\n" +
+                           "\n" + pedido1.masAntiguoQue(pedido2));
 
     }
 }
