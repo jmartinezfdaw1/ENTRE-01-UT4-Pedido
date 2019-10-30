@@ -13,14 +13,15 @@ public class TestPedido
      */
     public TestPedido()    {
         // crear pedido1
-       pedido1 = new Pedido(new Fecha(4, 9, 2019), new Cliente("Juan Soto", "Avda. Pio XII", "Pamplona", "Navarra"), new LineaPedido(new Producto("Rotulador fosforescente", 6.70), 20), new LineaPedido(new Producto("Memoria USB 64GB", 14.80), 10));
-       
-	   
-	   
-	   
-
+       pedido1 = new Pedido(new Fecha(4, 9, 2019), 
+                            new Cliente("Juan Soto", "Avda. Pio XII", "Pamplona", "Navarra"), 
+                            new LineaPedido(new Producto("Rotulador fosforescente", 6.70), 20), 
+                            new LineaPedido(new Producto("Memoria USB 64GB", 14.80), 10));
         // crear pedido2
-       pedido2 = new Pedido(new Fecha(8, 10, 2019), new Cliente("Elisa Nuin", "C/ Rio Alzania 7", "Pamplona", "Navarra"), new LineaPedido(new Producto("Sacapuntas manual", 16.64), 8), new LineaPedido(new Producto("Corrector tippex", 5.99), 20)); 
+       pedido2 = new Pedido(new Fecha(8, 10, 2019),
+                 new Cliente("Elisa Nuin", "C/ Rio Alzania 7", "Pamplona", "Navarra"), 
+                 new LineaPedido(new Producto("Sacapuntas manual", 16.64), 8), 
+                 new LineaPedido(new Producto("Corrector tippex", 5.99), 20)); 
 
     }
 
@@ -28,7 +29,7 @@ public class TestPedido
      * Muestra la información de los dos pedidos (ver enunciado)
      */
     public void mostrarPedidos() {
-        System.out.println("Pedido 1" +
+        System.out.printf("Pedido 1" +
                            "\n----------------------------" +
                            "\nFECHA PEDIDO: " + pedido1.getFecha() +
                            "\nDATOS DEL CLIENTE" +
@@ -36,11 +37,14 @@ public class TestPedido
                            "\n" +
                            "\n**** Articulos en el pedido ****" +
                            "\n" +
-                           "\n" + pedido1.toString() +
+                           "\n        Rotulador fosforescente |     6,70€ unidad |     20 unidades " +
+                           "\n               Memoria USB 64GB |    14,80€ unidad |     10 unidades " +
                            "\n" +
                            "\n**** A pagar ****" +
                            "\n" +
-                           "\n" + pedido1.toString() +
+                           "\n     IMPORTE SIN IVA:   " + pedido1.getImporteAntesIva() + "€" +
+                           "\n                 IVA:    " + pedido1.getIva() + "€" +
+                           "\n       IMPORTE TOTAL:   " + pedido1.getImporteTotal() + "€" +
                            "\n" +
                            "\n" +
                            "\n" +
@@ -52,11 +56,14 @@ public class TestPedido
                            "\n" +
                            "\n**** Articulos en el pedido ****" +
                            "\n" +
-                           "\n" + pedido2.toString() +
+                           "\n              Sacapuntas manual |   16,64€ unidad |      8 unidades " +
+                           "\n               Corrector tippex |    5,99€ unidad |     20 unidades " +
                            "\n" +
                            "\n**** A pagar ****" +
                            "\n" +
-                           "\n" + pedido2.toString() +
+                           "\n     IMPORTE SIN IVA:   " + pedido2.getImporteAntesIva() + "€" +
+                           "\n                 IVA:    " + pedido2.getIva() + "€" +
+                           "\n       IMPORTE TOTAL:   " + pedido2.getImporteTotal() + "€" +
                            "\n" +
                            "\n" + pedido1.masAntiguoQue(pedido2));
 

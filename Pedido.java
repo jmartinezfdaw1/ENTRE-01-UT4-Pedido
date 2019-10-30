@@ -12,7 +12,6 @@ public class Pedido
     private Cliente cliente;
     private LineaPedido linea1;
     private LineaPedido linea2;
-
     /**
      * Constructor  
      */
@@ -42,7 +41,7 @@ public class Pedido
      * calcular y devolver el importe total del pedido sin Iva
      */
     public double getImporteAntesIva() {
-         double importeAntesIva = linea1.getCantidad()  + linea2.getCantidad();
+         double importeAntesIva = linea1.getCantidad() * linea1.getProducto().getPrecio() + linea2.getCantidad() * linea2.getProducto().getPrecio() ;
          return importeAntesIva;
     }
 
@@ -67,8 +66,8 @@ public class Pedido
      * (ver enunciado)
      */
     public String toString() {
-        String lineaPedido = String.format("%-20s \n%-20s \n%-20s", "IMPORTE SIN IVA: %8,2f", "IVA: %8,2f", "IMPORTE TOTAL: %8,2f", getImporteAntesIva(), getIva(), getImporteTotal());
-        return fecha.toString() + cliente.toString() + linea1.toString() + linea2.toString() + lineaPedido;
+        String lineaPedido = String.format("IMPORTE SIN IVA: %8,2f", "IVA: %8,2f", "IMPORTE TOTAL: %8,2f", getImporteAntesIva(), getIva(), getImporteTotal());
+        return lineaPedido;
     }
     
     
